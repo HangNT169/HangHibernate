@@ -9,8 +9,8 @@ USE hibernate_demo;
 
 CREATE TABLE hibernate_demo.category (
 	id bigint IDENTITY(0,1) NOT NULL,
-	category_code varchar(10) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	category_name nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	category_code varchar(10)  NULL,
+	category_name nvarchar(50)  NULL,
 	CONSTRAINT category_PK PRIMARY KEY (id)
 );
 
@@ -24,10 +24,10 @@ CREATE TABLE hibernate_demo.category (
 CREATE TABLE hibernate_demo.product (
 	id bigint IDENTITY(0,1) NOT NULL,
 	category_id bigint NULL,
-	product_code varchar(20) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
-	product_name nvarchar(50) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	product_code varchar(20)  NULL,
+	product_name nvarchar(50) NULL,
 	price float NULL,
-	description nvarchar(4000) COLLATE SQL_Latin1_General_CP1_CI_AS NULL,
+	description nvarchar(4000) NULL,
 	CONSTRAINT product_PK PRIMARY KEY (id),
 	CONSTRAINT product_FK FOREIGN KEY (category_id) REFERENCES category(id)
 );
